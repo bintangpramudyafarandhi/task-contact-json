@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "async": "^3.2.4",
+    "validator": "^13.7.0"
+  },
+  "name": "contact-28-11-2022",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
