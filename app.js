@@ -31,11 +31,7 @@ const question = (questions, feedback) => {
     })
 }
 
-const main = async () => {
-    const name = await question('What is your name? ','Your name : ')
-
-    const email = await question('What is your email? ','Your email : ')
-
+const savedata = (name,email,number) => {
     //validator email
     if (validator.isEmail(email) == false) {
         console.log("Your email is incorrect")
@@ -43,8 +39,6 @@ const main = async () => {
         return(false)
     }
     //validator email
-    
-    const number = await question('What is your phone number? ','Your phone number : ')
 
     //validator no.hp
     if (validator.isMobilePhone(number,'id-ID') == false) {
@@ -72,45 +66,4 @@ const main = async () => {
     rl.close();
 }
 
-main()
-
-
-
-/*
-//pertanyaan
-rl.question('What is your name? ', (name) => {
-    rl.question('What is your email? ', (email) =>{
-        rl.question('What is your phone number? ', (number) =>{
-        //pertanyaan
-
-            //memasukan data ke contacts.json
-            const contact = {name,email,number};
-            const file = fs.readFileSync('data/contacts.json','utf-8');
-            const contacts = JSON.parse(file);
-            contacts.push(contact);
-            fs.writeFileSync('data/contacts.json',JSON.stringify(contacts));
-            console.log ('\nTerima kasih sudah memasukkan data!');
-            //memasukan data ke contacts.json
-
-            console.log(`\nName : ${name}`)
-
-            //validator email
-            if (validator.isEmail(email) == false) {
-                console.log("Your email is incorrect")
-            }
-            else {
-                console.log(`Email : ${email}`);
-            }
-
-            //validator no. hp
-            if (validator.isMobilePhone(number,'id-ID') == false) {
-                console.log("Your phone number is incorrect")
-            }
-            else {
-                console.log(`Phone number : ${number}`)
-            }
-
-            rl.close();
-        })
-    })
-})*/
+module.exports = {question,savedata}
